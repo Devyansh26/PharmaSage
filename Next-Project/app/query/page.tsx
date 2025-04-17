@@ -48,7 +48,7 @@ export default function Chat(){
         if(count >= 3){
             return;
         }
-        //@ts-expect-error
+        //@ts-ignore
         const val = target?.current?.value;
         
         const res = await axios.post("http://localhost:3000/api/chat", {
@@ -56,7 +56,7 @@ export default function Chat(){
         });
 
         setResponse(res.data.response);
-        //@ts-expect-error
+        //@ts-ignore
         target.current.value = "";
 
         // Only increment count for non-signed in users
