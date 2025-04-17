@@ -16,18 +16,9 @@ import { AnimatePresence, motion } from "motion/react";
 import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 
-//@ts-nocheck
-// Define an interface for the carousel items
-interface CarouselItem {
-  id: string | number;
-  title?: string;
-  image?: string;
-  description?: string;
-  // Add other properties that your items might have
-}
 
 interface CarouselProps {
-  items: CarouselItem[];
+  items: React.ReactNode[];
   initialScroll?: number;
 }
 
@@ -120,7 +111,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
               "mx-auto max-w-7xl", // remove max-w-4xl if you want the carousel to span the full width of its container
             )}
           >
-            {items.map((item: CarouselItem , index: number) => (
+            {items.map((item, index: number) => (
               <motion.div
                 initial={{
                   opacity: 0,
