@@ -1,7 +1,7 @@
 import axios from "axios";
-import fs from "fs";
+// import fs from "fs";
 import { NextRequest, NextResponse } from "next/server";
-import path from "path";
+// import path from "path";
 
 export async function POST(req: NextRequest){
     
@@ -13,16 +13,16 @@ export async function POST(req: NextRequest){
     }
 
 
-    let data;
-    try {
-        // need to specify the path of the file
-        const filePath = path.join(process.cwd(), "files", "MedData.json");
-        data = JSON.parse(await fs.promises.readFile(filePath, "utf8"));
+    // let data;
+    // try {
+    //     // need to specify the path of the file
+    //     const filePath = path.join(process.cwd(), "files", "MedData.json");
+    //     data = JSON.parse(await fs.promises.readFile(filePath, "utf8"));
 
-    } catch (error) {
-        console.error("Error loading JSON file:", error);
-        data = [];
-    }
+    // } catch (error) {
+    //     console.error("Error loading JSON file:", error);
+    //     data = [];
+    // }
 
 
     const { userInput } = await req.json();
