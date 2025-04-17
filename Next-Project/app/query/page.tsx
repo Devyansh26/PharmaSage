@@ -13,7 +13,7 @@ export default function Chat(){
 // make it a client component
 
     const { isSignedIn } = useAuth();
-    const target = useRef(null);
+    const target = useRef<HTMLInputElement>(null);
     const [response,setResponse] = useState("");
     const [msg, setMsg] = useState("");
     const [count, setCount] = useState(0);
@@ -48,16 +48,18 @@ export default function Chat(){
         if(count >= 3){
             return;
         }
-        //@ts-ignore
-        const val = target?.current?.value;
+
+        const val = target?.current?.value || "";
         
         const res = await axios.post("http://localhost:3000/api/chat", {
             userInput: val
         });
 
         setResponse(res.data.response);
-        //@ts-ignore
-        target.current.value = "";
+
+        if(target.current) {
+            target.current.value = "";
+        }
 
         // Only increment count for non-signed in users
         if(!isSignedIn){
