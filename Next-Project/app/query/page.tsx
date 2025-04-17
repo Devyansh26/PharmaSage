@@ -51,7 +51,7 @@ export default function Chat(){
 
         const val = target?.current?.value || "";
         
-        const res = await axios.post("http://localhost:3000/api/chat", {
+        const res = await axios.post("/api/chat", {
             userInput: val
         });
 
