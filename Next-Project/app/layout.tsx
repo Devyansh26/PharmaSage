@@ -94,8 +94,10 @@ export default function RootLayout({
 
             <div className="w-32 flex justify-end">
               <SignedOut>
-                <SignInButton className="bg-gray-800 hover:bg-gray-700 text-white py-1 px-4 rounded ease-in-out transition" />
-                <SignUpButton className="bg-gray-800 hover:bg-gray-700 text-white py-1 px-4 rounded ease-in-out transition ml-2" />
+                {/* <SignInButton className="bg-gray-800 hover:bg-gray-700 text-white py-1 px-4 rounded ease-in-out transition" />
+                <SignUpButton className="bg-gray-800 hover:bg-gray-700 text-white py-1 px-4 rounded ease-in-out transition ml-2" /> */}
+                <SignInButton/>
+                <SignUpButton/>
               </SignedOut>
               <SignedIn>
                 <UserButton />

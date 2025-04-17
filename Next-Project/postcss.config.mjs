@@ -4,11 +4,11 @@ const config = {
 
 export default {
   plugins: config.plugins,
-  theme: {
-    extend: {
-      fontFamily: {
-        poppins: ['var(--font-poppins)'],
-      },
-    },
-  },
+  // theme: {
+  //   extend: {
+  //     fontFamily: {
+  //       poppins: ['var(--font-poppins)'],
+  //     },
+  //   },
+  // },
 };
