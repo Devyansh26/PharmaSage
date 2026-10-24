@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest){
 
-    const azureEndPoint = process.env.AZURE_API_ENDPOINT as string
+    const azureEndPoint = process.env.AZURE_FUNCTION_URL as string
 
     const { userInput } = await req.json();
 

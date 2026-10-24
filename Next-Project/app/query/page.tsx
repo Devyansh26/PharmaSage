@@ -50,7 +50,7 @@ export default function Chat() {
         }
         
         try {
-            const res = await axios.post("/api/chat", {
+            const res = await axios.post("api/chat/", {
                 userInput: val
             });
             setResponse(res.data.response);
